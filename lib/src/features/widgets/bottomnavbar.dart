@@ -65,12 +65,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
             children: [
               IconButton(
                   onPressed: () {},
-                  icon: /* SvgPicture.asset(
-                    "assets/images/home_icon.svg",iconSize: 5) */
-                      Icon(
-                    Icons.home,
-                    color: Colors.green,
-                  )),
+                  icon: SvgPicture.asset("assets/images/home_icon.svg")
+                  /* Icon(
+                     FontAwesomeIcons.search,
+                    color: Colors.green, 
+                  )),*/
+                  ),
               IconButton(
                   onPressed: () {},
                   icon: SvgPicture.asset("assets/images/explore.svg")),

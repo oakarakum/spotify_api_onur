@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:spotify_api_onur/src/ui/pages/homepages.dart';
+import 'package:spotify_api_onur/src/ui/pages/artics_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/browse_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,10 +19,10 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
-              scaffoldBackgroundColor: Colors.black,
+              scaffoldBackgroundColor: Colors.white,
               primarySwatch: Colors.blue,
             ),
-            home: HomePageScreen());
+            home: ArticsScreen());
       },
     );
   }

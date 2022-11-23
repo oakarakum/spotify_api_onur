@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -10,12 +12,16 @@ class BrowseTypes extends StatefulWidget {
   @override
   State<BrowseTypes> createState() => _BrowseTypesState();
 }
+//Harfi büyük yazmak için
+extension StringCasingExtension on String {
+  String toCapitalized() => length > 0 ?'${this[0].toUpperCase()}${substring(1).toLowerCase()}':'';
+  String toTitleCase() => replaceAll(RegExp(' +'), ' ').split(' ').map((str) => str.toCapitalized()).join(' ');
+}
 
 class _BrowseTypesState extends State<BrowseTypes> {
   CategoriesProvider? data;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     data = Provider.of<CategoriesProvider>(context, listen: false);
     data!.getCategories();
@@ -34,33 +40,26 @@ class _BrowseTypesState extends State<BrowseTypes> {
             mainAxisExtent: 12.h,
           ),
           itemBuilder: ((context, index) {
-            return Container(
+            return Consumer(builder: ((context, CategoriesProvider value, widget) {
+              return 
+              value.categoriesList.categories != null 
+              ? Container(
+                alignment: Alignment.bottomRight,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5), color: Colors.green),
+                  borderRadius: BorderRadius.circular(5), 
+                  image: DecorationImage(image: NetworkImage(value.categoriesList.categories!.items![index].icons![0].url.toString()),fit: BoxFit.cover)
+                  ),
               child: Padding(
-                padding: EdgeInsets.only(top: 3.h, left: 2.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Podcast'ler",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400)),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 60),
-                      height: 100,
-                      width: 50,
-                      child: Image.asset(
-                        "assets/images/spotify-dissect-podcast.jpg",
-                        fit: BoxFit.fitHeight,
-                      ),
-                    )
-                  ],
-                ),
+                padding: EdgeInsets.only(bottom: 1.25.h, right: 2.w),
+                child: Text("${value.categoriesList.categories!.items![index].name!.toTitleCase()}",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400)),
               ),
-            );
+            )
+            : Center(child: CircularProgressIndicator());
+            }));
           })),
     );
   }

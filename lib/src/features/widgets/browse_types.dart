@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../../providers/categories_provider.dart';
 
 class BrowseTypes extends StatefulWidget {
   const BrowseTypes({super.key});
@@ -9,6 +12,15 @@ class BrowseTypes extends StatefulWidget {
 }
 
 class _BrowseTypesState extends State<BrowseTypes> {
+  CategoriesProvider? data;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    data = Provider.of<CategoriesProvider>(context, listen: false);
+    data!.getCategories();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

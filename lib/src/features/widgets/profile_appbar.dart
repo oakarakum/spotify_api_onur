@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      // custom yapmayı unutma appbar widgetini kullanma
       elevation: 0,
       backgroundColor: Colors.white,
       leading: GestureDetector(
@@ -19,12 +20,11 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: ((context) => ArticsScreen())));
           },
-          child: Center(
-              child: Icon(
+          child: Icon(
             Icons.arrow_back_ios,
             size: 15,
             color: Color(0xff545454),
-          ))
+          )
           /* SvgPicture.asset(
           "assets/images/left_arrow.svg",
         ), */

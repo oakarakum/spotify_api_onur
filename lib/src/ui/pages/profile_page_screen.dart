@@ -69,7 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             SizedBox(height: 1.h),
                             Text(
-                              "Followes",
+                              "Follower",
                               style: TextStyle(
                                   color: Color(0xff585858),
                                   fontSize: 2.h,
@@ -88,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             SizedBox(height: 1.h),
                             Text(
-                              "Followes",
+                              "Following",
                               style: TextStyle(
                                   color: Color(0xff585858),
                                   fontSize: 2.h,

@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spotify_api_onur/src/ui/pages/browse_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/profile_page_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -64,7 +67,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => HomePageScreen())));
+                  },
                   icon: SvgPicture.asset("assets/images/home_icon.svg")
                   /* Icon(
                      FontAwesomeIcons.search,
@@ -72,13 +80,23 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   )),*/
                   ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => BrowseScreen())));
+                  },
                   icon: SvgPicture.asset("assets/images/explore.svg")),
               IconButton(
                   onPressed: () {},
                   icon: SvgPicture.asset("assets/images/favourite.svg")),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ProfilePage())));
+                  },
                   icon: SvgPicture.asset("assets/images/user.svg")),
             ],
           ),

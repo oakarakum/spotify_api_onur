@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
 import 'package:spotify_api_onur/src/features/widgets/browse_textformfield.dart';
 import 'package:spotify_api_onur/src/features/widgets/browse_types.dart';
 
@@ -23,6 +24,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
         toolbarHeight: 0,
         backgroundColor: Colors.black,
       ),
+      bottomNavigationBar: BottomNavBar(),
       backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),

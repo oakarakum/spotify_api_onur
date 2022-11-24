@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/providers/categories_provider.dart';
-import 'package:spotify_api_onur/src/ui/pages/artics_screen.dart';
-import 'package:spotify_api_onur/src/ui/pages/browse_screen.dart';
-import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/artist_info_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/profile_page_screen.dart';
 
 void main() {
   runApp(MultiProvider(
-    child: MyApp(),
     providers: [
       ChangeNotifierProvider(
         create: (context) => CategoriesProvider(),
       )
     ],
+    child: const MyApp(),
   ));
 }
 
@@ -36,7 +35,7 @@ class _MyAppState extends State<MyApp> {
               scaffoldBackgroundColor: Colors.white,
               primarySwatch: Colors.blue,
             ),
-            home: BrowseScreen());
+            home: ProfilePage());
       },
     );
   }

@@ -1,44 +1,96 @@
-class ProfileInfoModel {
-  String? country;
-  String? displayName;
-  String? email;
-  ExplicitContent? explicitContent;
+class FavMixModel {
+  Artists? artists;
+
+  FavMixModel({this.artists});
+
+  FavMixModel.fromJson(Map<String, dynamic> json) {
+    artists =
+        json['artists'] != null ? new Artists.fromJson(json['artists']) : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.artists != null) {
+      data['artists'] = this.artists!.toJson();
+    }
+    return data;
+  }
+}
+
+class Artists {
+  List<Items>? items;
+  Null? next;
+  int? total;
+  Cursors? cursors;
+  int? limit;
+  String? href;
+
+  Artists(
+      {this.items, this.next, this.total, this.cursors, this.limit, this.href});
+
+  Artists.fromJson(Map<String, dynamic> json) {
+    if (json['items'] != null) {
+      items = <Items>[];
+      json['items'].forEach((v) {
+        items!.add(new Items.fromJson(v));
+      });
+    }
+    next = json['next'];
+    total = json['total'];
+    cursors =
+        json['cursors'] != null ? new Cursors.fromJson(json['cursors']) : null;
+    limit = json['limit'];
+    href = json['href'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.items != null) {
+      data['items'] = this.items!.map((v) => v.toJson()).toList();
+    }
+    data['next'] = this.next;
+    data['total'] = this.total;
+    if (this.cursors != null) {
+      data['cursors'] = this.cursors!.toJson();
+    }
+    data['limit'] = this.limit;
+    data['href'] = this.href;
+    return data;
+  }
+}
+
+class Items {
   ExternalUrls? externalUrls;
   Followers? followers;
+  List<String>? genres;
   String? href;
   String? id;
   List<Images>? images;
-  String? product;
+  String? name;
+  int? popularity;
   String? type;
   String? uri;
 
-  ProfileInfoModel(
-      {this.country,
-      this.displayName,
-      this.email,
-      this.explicitContent,
-      this.externalUrls,
+  Items(
+      {this.externalUrls,
       this.followers,
+      this.genres,
       this.href,
       this.id,
       this.images,
-      this.product,
+      this.name,
+      this.popularity,
       this.type,
       this.uri});
 
-  ProfileInfoModel.fromJson(Map<String, dynamic> json) {
-    country = json['country'];
-    displayName = json['display_name'];
-    email = json['email'];
-    explicitContent = json['explicit_content'] != null
-        ? new ExplicitContent.fromJson(json['explicit_content'])
-        : null;
+  Items.fromJson(Map<String, dynamic> json) {
     externalUrls = json['external_urls'] != null
         ? new ExternalUrls.fromJson(json['external_urls'])
         : null;
     followers = json['followers'] != null
         ? new Followers.fromJson(json['followers'])
         : null;
+    genres = json['genres'].cast<String>();
     href = json['href'];
     id = json['id'];
     if (json['images'] != null) {
@@ -47,52 +99,30 @@ class ProfileInfoModel {
         images!.add(new Images.fromJson(v));
       });
     }
-    product = json['product'];
+    name = json['name'];
+    popularity = json['popularity'];
     type = json['type'];
     uri = json['uri'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['country'] = this.country;
-    data['display_name'] = this.displayName;
-    data['email'] = this.email;
-    if (this.explicitContent != null) {
-      data['explicit_content'] = this.explicitContent!.toJson();
-    }
     if (this.externalUrls != null) {
       data['external_urls'] = this.externalUrls!.toJson();
     }
     if (this.followers != null) {
       data['followers'] = this.followers!.toJson();
     }
+    data['genres'] = this.genres;
     data['href'] = this.href;
     data['id'] = this.id;
     if (this.images != null) {
       data['images'] = this.images!.map((v) => v.toJson()).toList();
     }
-    data['product'] = this.product;
+    data['name'] = this.name;
+    data['popularity'] = this.popularity;
     data['type'] = this.type;
     data['uri'] = this.uri;
-    return data;
-  }
-}
-
-class ExplicitContent {
-  bool? filterEnabled;
-  bool? filterLocked;
-
-  ExplicitContent({this.filterEnabled, this.filterLocked});
-
-  ExplicitContent.fromJson(Map<String, dynamic> json) {
-    filterEnabled = json['filter_enabled'];
-    filterLocked = json['filter_locked'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['filter_enabled'] = this.filterEnabled;
-    data['filter_locked'] = this.filterLocked;
     return data;
   }
 }
@@ -133,9 +163,9 @@ class Followers {
 }
 
 class Images {
-  Null? height;
+  int? height;
   String? url;
-  Null? width;
+  int? width;
 
   Images({this.height, this.url, this.width});
 
@@ -150,6 +180,22 @@ class Images {
     data['height'] = this.height;
     data['url'] = this.url;
     data['width'] = this.width;
+    return data;
+  }
+}
+
+class Cursors {
+  Null? after;
+
+  Cursors({this.after});
+
+  Cursors.fromJson(Map<String, dynamic> json) {
+    after = json['after'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['after'] = this.after;
     return data;
   }
 }

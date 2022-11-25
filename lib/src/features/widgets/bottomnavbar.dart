@@ -86,7 +86,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         MaterialPageRoute(
                             builder: ((context) => BrowseScreen())));
                   },
-                  icon: SvgPicture.asset("assets/images/explore.svg")),
+                  icon: Image.asset(
+                    "assets/images/search_icon.png",
+                  ) /*  SvgPicture.asset("assets/images/explore.svg") */),
               IconButton(
                   onPressed: () {},
                   icon: SvgPicture.asset("assets/images/favourite.svg")),

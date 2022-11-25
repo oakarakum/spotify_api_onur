@@ -1,30 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
-class HomepageAppbar extends StatefulWidget {
-  const HomepageAppbar({super.key});
+class CustomHomepageAppbar extends StatelessWidget with PreferredSizeWidget {
+  const CustomHomepageAppbar({
+    Key? key,
+  }) : super(key: key);
 
-  @override
-  State<HomepageAppbar> createState() => _HomepageAppbarState();
-}
+  @override // Appbar boyu
+  Size get preferredSize => Size.fromHeight(15.h);
 
-class _HomepageAppbarState extends State<HomepageAppbar> {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.white,
-      leading: IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset("assets/images/search_icon.svg")),
-      title: SvgPicture.asset("assets/images/spotify_title.svg"),
-      centerTitle: true,
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset("assets/images/three_dot_icon.svg"),
-        )
-      ],
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.only(top: 3.5.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset("assets/images/search_icon.svg"),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14.w),
+              child: SvgPicture.asset(
+                "assets/images/spotify_title.svg",
+                height: 5.h,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset("assets/images/three_dot_icon.svg"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

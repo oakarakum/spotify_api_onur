@@ -47,6 +47,7 @@ class _FavouriteMixesState extends State<FavouriteMixes> {
                           SizedBox(
                             height: 17.h,
                             width: 35.w,
+                            child: Image.network(value.favMixesList.artists!.items![index].images![index].url.toString()),
                           ),
                           SizedBox(
                               height: 5.h,

@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:spotify_api_onur/src/providers/artist_provider.dart';
 
 class FavouriteArtists extends StatefulWidget {
@@ -37,28 +37,45 @@ class _FavouriteArtistsState extends State<FavouriteArtists> {
                 padding: EdgeInsets.only(left: 1.w),
                 child: Container(
                     width: 40.w,
-                    color: Color.fromARGB(255, 228, 219, 219),
+                    color: Color.fromARGB(255, 189, 238, 205),
                     child: Padding(
                       padding: EdgeInsets.all(2.w),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
+                          value.isArtistLoaded == true
+                          ? Container(
                               height: 17.h,
                               width: 35.w,
-                              child: Image.network(value
-                                  .artistList.artists![index].images![0].url
-                                  .toString())),
+                              child: Image.network(value.artistList.artists!.items![index].images![index].url.toString(),fit: BoxFit.cover,)
+                                  )
+                                  : Shimmer.fromColors(child: Container(
+                                    height: 17.h,
+                              width: 35.w,
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.only(top:3.h,left: 2.w),
+                                  child: Text("Loading...",
+                                        style: TextStyle(
+                                            color: Color.fromARGB(255, 6, 135, 6),
+                                            fontSize: 3.h,
+                                            fontWeight: FontWeight.w500)),
+                                ),
+                              ),
+                                  )
+                                  , baseColor: Colors.white,
+                                   highlightColor: Color.fromARGB(255, 63, 226, 68))
+                                  ,
                           SizedBox(
                               height: 5.h,
                               width: 40.w,
                               child: Center(
                                 child: AutoSizeText(
-                                    value.artistList.artists![index].name!,
+                                     value.artistList.artists!.items![index].name!.toString(), 
                                     maxLines: 2,
                                     style: TextStyle(
-                                        color: Color.fromARGB(255, 58, 56, 56),
+                                        color: Color(0xffFAFAFA),
                                         fontSize: 2.h,
                                         fontWeight: FontWeight.w500)),
                               )),

@@ -11,7 +11,7 @@ Future<FavMixModel?> getFavMixesServices() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQDCMc2tPcZ60ZlgUNoeemv3MhGteWxx_KtU5WbrqpS2bEuWfFGZgLGlx1dTOq9iVb00nSudSHz34zaeTPJTyX3HYRoo86Rmh6t-JthtTmILAmYfw4L_v2-CNU0rQpgdrc6OEaNIO5YGZ9ubvfVBjq_mY9p1tR76GEE7REeHPDrbx0ach-zZ75VeyAkF89pGnFGr9x-_cdo64F1tqeRxO2VByBaPQZTaVVHcDTt18gi2gMcnCQE20yNHxoZVmoO-sL6hIhMfOsKi26rKVVNYLS6XxUuY5yZghWzMq7tyJ9qn',
+        'Bearer BQBVvNIYZckKSSYoqhq4oIYVx82oXKfHo0thtVSpeBZFaOvmyCdi1l9ATlg59xmEKLbjSIksCG6R130IPKNVlf4Pw59n5G1BcZEa27LZCPTeeBX7U2d8WjMqeoo_oBo838_-7vA17_whVhzeZK5ouqnVgj4bMLLZfrfDwNJra_BbDWBh0J5SIO1knheFYOJ7EsrvE9Mtd9cER5vbFkk58OJSk2_yr8dTMkFeRoV6c6VnID6U0KEor7dfvI1q_uO44dY2mlypp_UK8AybpEo4d0KHsjQNZOiWBZBM2EeuSWjt',
   };
 
   var params = {

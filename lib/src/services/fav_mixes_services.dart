@@ -10,18 +10,16 @@ Future<FavMixModel?> getFavMixesServices() async {
   var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization':
-        'Bearer BQBVvNIYZckKSSYoqhq4oIYVx82oXKfHo0thtVSpeBZFaOvmyCdi1l9ATlg59xmEKLbjSIksCG6R130IPKNVlf4Pw59n5G1BcZEa27LZCPTeeBX7U2d8WjMqeoo_oBo838_-7vA17_whVhzeZK5ouqnVgj4bMLLZfrfDwNJra_BbDWBh0J5SIO1knheFYOJ7EsrvE9Mtd9cER5vbFkk58OJSk2_yr8dTMkFeRoV6c6VnID6U0KEor7dfvI1q_uO44dY2mlypp_UK8AybpEo4d0KHsjQNZOiWBZBM2EeuSWjt',
+    'Authorization': 'Bearer BQBj4jXiXy9GFg4-kqJKqpHIvolk-TYx3mf-OGKrb_wK6lGI3F_62v4AifFFSSsQcr5H9w9j--zum9AQ4tZmesIOoNkv1QA66woJ9jV-nSacC8JAj4ENVN0IBtbVofXZxUR1QZI0XQX661fmJCVpxGMkH-DsabeaWRNnJOSAqpoicJrqsIK02AaryvzrzmeyXCeInRYLw8T179eJX1dHx6PGbv691r2afrJ9QKEzUMCqk-3U3RiEzkBeWcSSrIRvdzDJ6oFtIjpmCgNm4B4FW396dNlpP5J0NwMFRs0Q340K',
   };
 
   var params = {
-    'type': 'artist',
-    'after': '0I2XqVXqHScXjHhk6AYYRe',
-    'limit': '10',
+    'market': 'TR',
+    'ids': '7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B',
   };
   var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
 
-  var url = Uri.parse('https://api.spotify.com/v1/me/following?$query');
+  var url = Uri.parse('https://api.spotify.com/v1/tracks?$query');
   var res = await http.get(url, headers: headers);
 
   if (res.statusCode == 200) {
@@ -33,3 +31,29 @@ Future<FavMixModel?> getFavMixesServices() async {
     return null;
   }
 }
+
+
+/* 
+
+import 'package:http/http.dart' as http;
+
+void main() async {
+  var headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer BQBj4jXiXy9GFg4-kqJKqpHIvolk-TYx3mf-OGKrb_wK6lGI3F_62v4AifFFSSsQcr5H9w9j--zum9AQ4tZmesIOoNkv1QA66woJ9jV-nSacC8JAj4ENVN0IBtbVofXZxUR1QZI0XQX661fmJCVpxGMkH-DsabeaWRNnJOSAqpoicJrqsIK02AaryvzrzmeyXCeInRYLw8T179eJX1dHx6PGbv691r2afrJ9QKEzUMCqk-3U3RiEzkBeWcSSrIRvdzDJ6oFtIjpmCgNm4B4FW396dNlpP5J0NwMFRs0Q340K',
+  };
+
+  var params = {
+    'market': 'TR',
+    'ids': '7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B',
+  };
+  var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
+
+  var url = Uri.parse('https://api.spotify.com/v1/tracks?$query');
+  var res = await http.get(url, headers: headers);
+  if (res.statusCode != 200) throw Exception('http.get error: statusCode= ${res.statusCode}');
+  print(res.body);
+}
+
+ */

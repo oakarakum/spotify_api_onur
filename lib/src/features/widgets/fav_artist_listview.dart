@@ -33,55 +33,46 @@ class _FavouriteArtistsState extends State<FavouriteArtists> {
             scrollDirection: Axis.horizontal,
             itemCount: 3,
             itemBuilder: ((context, index) {
-              return Padding(
-                padding: EdgeInsets.only(left: 1.w),
-                child: Container(
-                    width: 40.w,
-                    color: Color.fromARGB(255, 189, 238, 205),
-                    child: Padding(
-                      padding: EdgeInsets.all(2.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          value.isArtistLoaded == true
-                          ? Container(
-                              height: 17.h,
-                              width: 35.w,
-                              child: Image.network(value.artistList.artists!.items![index].images![index].url.toString(),fit: BoxFit.cover,)
-                                  )
-                                  : Shimmer.fromColors(child: Container(
-                                    height: 17.h,
-                              width: 35.w,
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top:3.h,left: 2.w),
-                                  child: Text("Loading...",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(255, 6, 135, 6),
-                                            fontSize: 3.h,
-                                            fontWeight: FontWeight.w500)),
-                                ),
-                              ),
-                                  )
-                                  , baseColor: Colors.white,
-                                   highlightColor: Color.fromARGB(255, 63, 226, 68))
-                                  ,
-                          SizedBox(
-                              height: 5.h,
-                              width: 40.w,
-                              child: Center(
-                                child: AutoSizeText(
-                                     value.artistList.artists!.items![index].name!.toString(), 
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                        color: Color(0xffFAFAFA),
-                                        fontSize: 2.h,
-                                        fontWeight: FontWeight.w500)),
-                              )),
-                        ],
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  value.isArtistLoaded == true
+                  ? Container(
+                      height: 17.h,
+                      width: 35.w,
+                      child: Image.network(value.artistList.artists!.items![index].images![index].url.toString(),fit: BoxFit.cover,)
+                          )
+                          : Shimmer.fromColors(child: Container(
+                            height: 17.h,
+                      width: 35.w,
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.only(top:3.h,left: 2.w),
+                          child: Text("Loading...",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 6, 135, 6),
+                                    fontSize: 3.h,
+                                    fontWeight: FontWeight.w500)),
+                        ),
                       ),
-                    )),
+                          )
+                          , baseColor: Colors.white,
+                           highlightColor: Color.fromARGB(255, 63, 226, 68))
+                          ,
+                  SizedBox(
+                      height: 5.h,
+                      width: 40.w,
+                      child: Center(
+                        child: AutoSizeText(
+                             value.artistList.artists!.items![index].name!.toString(), 
+                            maxLines: 2,
+                            style: TextStyle(
+                            color: Color.fromARGB(255, 58, 56, 56),
+                                fontSize: 2.h,
+                                fontWeight: FontWeight.w500)),
+                      )),
+                ],
               );
             })),
       );

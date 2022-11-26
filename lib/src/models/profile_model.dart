@@ -1,3 +1,11 @@
+import 'dart:convert';
+
+ProfileInfoModel ProfileInfoModelFromJson(String str) =>
+    ProfileInfoModel.fromJson(json.decode(str));
+
+String ProfileInfoModelToJson(ProfileInfoModel data) =>
+    json.encode(data.toJson());
+
 class ProfileInfoModel {
   String? country;
   String? displayName;

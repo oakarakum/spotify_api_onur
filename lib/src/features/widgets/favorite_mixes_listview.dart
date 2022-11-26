@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -31,40 +30,36 @@ class _FavouriteMixesState extends State<FavouriteMixes> {
         width: 100.w,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 3,
+            itemCount: value.favMixesList.tracks!.length,
             itemBuilder: ((context, index) {
-              return Padding(
-                padding: EdgeInsets.only(left: 1.w),
-                child: Container(
-                    width: 40.w,
-                    color: Color.fromARGB(255, 228, 219, 219),
-                    child: Padding(
-                      padding: EdgeInsets.all(2.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 17.h,
-                            width: 35.w,
-                            child: Image.network(value.favMixesList.artists!.items![index].images![index].url.toString()),
-                          ),
-                          SizedBox(
-                              height: 5.h,
-                              width: 40.w,
-                              child: Center(
-                                child: AutoSizeText(
-                                    /* value.favMixesList.artists![index]. */ "",
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                        color: Color.fromARGB(255, 58, 56, 56),
-                                        fontSize: 2.h,
-                                        fontWeight: FontWeight.w500)),
-                              )),
-                        ],
+              return 
+               value.isFavMixLoaded == true
+              ?Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 17.h,
+                    width: 35.w,
+                    child: 
+                    Image.network(
+                      value.favMixesList.tracks![index].album!.images![index].url.toString(),fit: BoxFit.contain,
                       ),
-                    )),
-              );
+                  ),
+                  SizedBox(
+                      height: 5.h,
+                      width: 40.w,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 6.w,top: .7.h),
+                        child: AutoSizeText(
+                          value.favMixesList.tracks![index].album!.name!.toString(),                          maxLines: 2,
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 58, 56, 56),
+                                fontSize: 1.7.h,
+                                fontWeight: FontWeight.w500)),
+                      )),
+                ],
+              ): LinearProgressIndicator()
+              ;
             })),
       );
     }));

@@ -5,7 +5,8 @@ class ArtistModel {
 
   ArtistModel.fromJson(Map<String, dynamic> json) {
     artists =
-        json['artists'] != null ? new Artists.fromJson(json['artists']) : null;
+        json['artists'] != null ? 
+        new Artists.fromJson(json['artists']) : null;
   }
 
   Map<String, dynamic> toJson() {

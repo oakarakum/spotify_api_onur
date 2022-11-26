@@ -31,7 +31,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Mixes",
+                    "Tracks",
                     style: TextStyle(
                         fontSize: 3.h,
                         fontWeight: FontWeight.w600,

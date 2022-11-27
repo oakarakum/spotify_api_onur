@@ -14,7 +14,7 @@ Future<CategoriesModel> getCategoriesService() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQB6rpswmIoDptiUicQo3SyvrQQX0-vn6SKnQd2LRfaPDESY0MTnCrkKGFpDttKnUy4eu0vixVoOm8kLH3F0RCYd7jKWSvJlc-adSkeLuq_zL_rj3lQBJ7fnWQA6wOC3NzOZAJIalEuQhs0Bah20hZj2fwRRFzwVmE1TVulyGiQ-Z4AmACXZ5wWqd0Z483wQ_APyEgJYvBvRCYrs1Jjjww1MDA5hXSQDErM4M07xPKd9XVWaarvQjCc0UDI3Vyn_z6_0Y2er1QK9VlbXgWyMXyTm_9sHqyRZJHLSz_i6GkKs',
+        'Bearer BQC5o43tD6WQWOKLsF0VhVZF8mxoDBgsX8Og4MShPo1gDY8YqHRzSknYH2TOg1G5CtJJVKEkMHcazrDh-TNWYSlIz10v1fv-oKOklnoKprOFLI6hBhpkaGNk8vB-axcAPgEf_jlhKanlU8NDYYxb-yo5D7D7TOusKVCAbccTQ0aW7qSX035D6NJCaxO8QP60TOajtXnE-Bz8bz5VwC5CvACMv5iEHTUbopXoM6C6MXB7PuaQRRCMUo98VORy0gmy4bMIsaXbsVedOhQUbcxvGjOsNr9NFQmdNa66OQl5yB5j',
   };
 //BQBlvCXpNT_N7SZaix8xEDGdu3VSrDxS99kRTmPRyizpWAoWewBWpoBskpi14BeVpSsQv1PkpPynF7SImbZDaBqCrYkpIHcbaf7bgOtRlfq7rU80fGEqxoeFY0xyDg3C-3V1KQQ5sum1_wXIP4KVzlswiucCxK9yp7aHKvaBO2TZP9Ov6LuVFOv_-WWrZYbjeljIyPJsJtfACUtzPSj6wgXivqG_PJiGtQ30bQ-0emSTdlLQ1eHtjPxmIgP6SivnwpK3kKTE3CUW2rUSjrM0PGfXa-QYVRwqTeDjeeORtYse
   var url = Uri.parse('https://api.spotify.com/v1/browse/categories');

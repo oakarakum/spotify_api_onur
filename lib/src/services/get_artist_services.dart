@@ -10,7 +10,7 @@ Future<ArtistModel?> getArtistServices() async {
  var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer BQBj4jXiXy9GFg4-kqJKqpHIvolk-TYx3mf-OGKrb_wK6lGI3F_62v4AifFFSSsQcr5H9w9j--zum9AQ4tZmesIOoNkv1QA66woJ9jV-nSacC8JAj4ENVN0IBtbVofXZxUR1QZI0XQX661fmJCVpxGMkH-DsabeaWRNnJOSAqpoicJrqsIK02AaryvzrzmeyXCeInRYLw8T179eJX1dHx6PGbv691r2afrJ9QKEzUMCqk-3U3RiEzkBeWcSSrIRvdzDJ6oFtIjpmCgNm4B4FW396dNlpP5J0NwMFRs0Q340K',
+    'Authorization': 'Bearer BQC5o43tD6WQWOKLsF0VhVZF8mxoDBgsX8Og4MShPo1gDY8YqHRzSknYH2TOg1G5CtJJVKEkMHcazrDh-TNWYSlIz10v1fv-oKOklnoKprOFLI6hBhpkaGNk8vB-axcAPgEf_jlhKanlU8NDYYxb-yo5D7D7TOusKVCAbccTQ0aW7qSX035D6NJCaxO8QP60TOajtXnE-Bz8bz5VwC5CvACMv5iEHTUbopXoM6C6MXB7PuaQRRCMUo98VORy0gmy4bMIsaXbsVedOhQUbcxvGjOsNr9NFQmdNa66OQl5yB5j',
   };
 
   var params = {

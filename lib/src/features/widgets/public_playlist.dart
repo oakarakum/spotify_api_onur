@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../../providers/profile_publiclist_provider.dart';
 
 class PublicPlayList extends StatefulWidget {
   const PublicPlayList({super.key});
@@ -13,9 +16,19 @@ class PublicPlayList extends StatefulWidget {
 }
 
 class _PublicPlayListState extends State<PublicPlayList> {
+  ProfilePublicListProvider? data6;
+
+  @override
+  void initState() {
+    data6 = Provider.of<ProfilePublicListProvider>(context, listen: false);
+    data6?.getPublicList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Consumer<ProfilePublicListProvider>(builder: ((context, value, child) {
+      return Padding(
       padding: EdgeInsets.symmetric(horizontal: 3.w),
       child: SizedBox(
           height: 60.h,
@@ -33,8 +46,12 @@ class _PublicPlayListState extends State<PublicPlayList> {
                       children: [
                         GestureDetector(
                             onTap: () {},
-                            child: Image.asset(
-                                "assets/images/publicplaylist_pic.png")),
+                            child: 
+                            //Image.network(value.publicPlayList.tracks!.items![index].track!.album!.images![index].url.toString())
+                             Image.asset(
+                                "assets/images/publicplaylist_pic.png") 
+                                
+                                ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.w),
                           child: SizedBox(
@@ -88,5 +105,7 @@ class _PublicPlayListState extends State<PublicPlayList> {
                 );
               }))),
     );
-  }
+  
+    }));
+    }
 }

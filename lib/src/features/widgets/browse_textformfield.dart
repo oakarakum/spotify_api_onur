@@ -12,26 +12,26 @@ class _BrowseTextformfieldState extends State<BrowseTextformfield> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 5.h,
+      height: 5.3.h,
       child: TextFormField(
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Color(0xffFAFAFA)),
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.all(0),
             //isDense: true,
-            fillColor: Colors.white,
+            fillColor: Colors.green,
             filled: true,
             prefixIcon: IconButton(
               onPressed: () {},
               icon: Icon(Icons.search),
-              color: Colors.grey,
+              color: Colors.white,
               iconSize: 3.h,
             ),
             prefixIconColor: Colors.white,
             hintText: "Ne dinlemek istiyorsun?",
             hintStyle: TextStyle(
-                color: Colors.grey, fontSize: 20, fontWeight: FontWeight.w500),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.white),
                 borderRadius: BorderRadius.circular(5)),

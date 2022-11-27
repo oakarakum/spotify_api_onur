@@ -40,19 +40,15 @@ class _RandomPlayListsState extends State<RandomPlayLists> {
               children: [
                 SizedBox(
                   height: 17.h,
-                  width: 35.w,// child: Image.network(value.artistList.artists!.items![index].images![index].url.toString())
+                  width: 35.w,
                   child: Image.network(value.randomPlayList.items![index].images![0].url.toString(),fit: BoxFit.cover),
                 ),
                 SizedBox(
                     height: 5.h,
                     width: 40.w,
                     child: Center(
-                      child: AutoSizeText(value.randomPlayList.items![index].name!.toString()
-                        ,
-                        //"Barış Manço Mix",  
-                        // value.artistList.artists!.items![index].name!.toString(), 
-
-                          maxLines: 2,
+                      child: AutoSizeText(value.randomPlayList.items![index].name!.toString(),
+                                                  maxLines: 2,
                           style: TextStyle(
                               color: Color.fromARGB(255, 58, 56, 56),
                               fontSize: 2.h,

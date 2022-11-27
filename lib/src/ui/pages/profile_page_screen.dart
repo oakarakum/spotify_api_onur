@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,9 +20,9 @@ class _ProfilePageState extends State<ProfilePage> {
   ProfileInfoProvider? data2;
   @override
   void initState() {
-    super.initState();
     data2 = Provider.of<ProfileInfoProvider>(context, listen: false);
     data2?.getInfo();
+    super.initState();
   }
 
   @override

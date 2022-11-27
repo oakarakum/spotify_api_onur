@@ -22,34 +22,32 @@ class _BrowseScreenState extends State<BrowseScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xffFAFAFA),
       ),
       bottomNavigationBar: BottomNavBar(),
-      backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 5.h),
+              SizedBox(height: 3.h),
               Text(
                 "Ara",
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xff000000),
                     fontWeight: FontWeight.w600,
-                    fontSize: 25),
+                    fontSize: 3.5.h),
               ),
               SizedBox(height: 4.h),
-              //Terformfield buraya gelecek
               BrowseTextformfield(),
               SizedBox(height: 5.h),
               Align(
                   child: Text("Hepsine göz at",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                          color: Color(0xff000000),
+                          fontSize: 2.5.h,
                           fontWeight: FontWeight.w600))),
               SizedBox(height: 3.h),
               //Gridview burada

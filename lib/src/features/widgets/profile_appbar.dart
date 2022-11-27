@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/ui/pages/artist_info_screen.dart';
+import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
@@ -29,7 +30,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => ArticsScreen())));
+                          builder: ((context) => HomePageScreen())));
                 },
                 child: Padding(
                   padding: EdgeInsets.only(left: 2.w),

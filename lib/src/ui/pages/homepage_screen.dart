@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
@@ -30,52 +31,72 @@ class _HomePageScreenState extends State<HomePageScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Tracks",
-                    style: TextStyle(
-                        fontSize: 3.h,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff131313)),
+                  FadeInLeft(
+                    delay: Duration(seconds: 2),
+                    child: Text(
+                      "Tracks",
+                      style: TextStyle(
+                          fontSize: 3.h,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff131313)),
+                    ),
                   ),
-                  Text("See More", style: TextStyle(color: Color(0xff131313))),
+                  FadeInLeft(
+                      delay: Duration(seconds: 2),
+                      child: Text("See More",
+                          style: TextStyle(color: Color(0xff131313)))),
                 ],
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 2.h),
-                child: FavouriteMixes(),
+                child: FadeInRightBig(child: FavouriteMixes()),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Artist",
-                    style: TextStyle(
-                        fontSize: 3.h,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff131313)),
+                  FadeInLeft(
+                    delay: Duration(seconds: 2),
+                    child: Text(
+                      "Artist",
+                      style: TextStyle(
+                          fontSize: 3.h,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff131313)),
+                    ),
                   ),
-                  Text("See More", style: TextStyle(color: Color(0xff131313))),
+                  FadeInLeft(
+                      delay: Duration(seconds: 2),
+                      child: Text("See More",
+                          style: TextStyle(color: Color(0xff131313)))),
                 ],
               ),
               Padding(
                   padding: EdgeInsets.symmetric(vertical: 2.h),
-                  child: FavouriteArtists()),
+                  child: FadeInRightBig(
+                    child: FavouriteArtists())),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "PlayLists",
-                    style: TextStyle(
-                        fontSize: 3.h,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff131313)),
+                  FadeInLeft(
+                    delay: Duration(seconds: 2),
+                    child: Text(
+                      "PlayLists",
+                      style: TextStyle(
+                          fontSize: 3.h,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff131313)),
+                    ),
                   ),
-                  Text("See More", style: TextStyle(color: Color(0xff131313))),
+                  FadeInLeft(
+                      delay: Duration(seconds: 2),
+                      child: Text("See More",
+                          style: TextStyle(color: Color(0xff131313)))),
                 ],
               ),
               Padding(
                   padding: EdgeInsets.symmetric(vertical: 2.h),
-                  child: RandomPlayLists())
+                  child: FadeInRightBig(
+                    child: RandomPlayLists()))
             ],
           ),
         ),

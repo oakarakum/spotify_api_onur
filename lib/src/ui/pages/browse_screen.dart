@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -33,25 +34,31 @@ class _BrowseScreenState extends State<BrowseScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 3.h),
-              Text(
-                "Ara",
-                style: TextStyle(
-                    color: Color(0xff000000),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 3.5.h),
+              FadeInDownBig(
+                child: Text(
+                  "Ara",
+                  style: TextStyle(
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 3.5.h),
+                ),
               ),
               SizedBox(height: 4.h),
               BrowseTextformfield(),
               SizedBox(height: 5.h),
               Align(
-                  child: Text("Hepsine göz at",
-                      style: TextStyle(
-                          color: Color(0xff000000),
-                          fontSize: 2.5.h,
-                          fontWeight: FontWeight.w600))),
+                  child: FadeInDownBig(
+                    child: Text("Hepsine göz at",
+                        style: TextStyle(
+                            color: Color(0xff000000),
+                            fontSize: 2.5.h,
+                            fontWeight: FontWeight.w600)),
+                  )),
               SizedBox(height: 3.h),
               //Gridview burada
-              BrowseTypes()
+              FadeIn(
+                delay: Duration(seconds: 2),
+                child: BrowseTypes())
             ],
           ),
         ),

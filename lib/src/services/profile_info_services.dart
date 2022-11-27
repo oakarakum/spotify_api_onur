@@ -13,7 +13,7 @@ Future<ProfileInfoModel?> getInfoService() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQD3IUvN88xt9DLdHyy7Cs-8GeAcBELTLLZIe2OqDlpxiuf6Qzm7dGLiLoKsLAxQlekE8RHlzx6GcQFqi_g-q7F14_6hsILCzL0XNFzW-t5tQXZ4Gbuny-Wk-sQJcQyInz61T2TRLBc4FZzOykUxbMLdcOX2ZhXElHNKhaFbTjtjQEDs6vvTeQJlRpjop6eIcLf6K_3uEo2Q6RH7hHvth-Tc2IrJ9yMlgJETl6W9-IK6fcoJtQvwyhrgc-VkI0-faKSTyAvqZUiju_AluE1DtZRPjOaLPVmqcvdrOg6UeiwX',
+        'Bearer BQBEAuxoKD1NdVvQOaaM6T6R8KLdZTm_8afJqkZz3ubsl5eBK0VrbHZeszb9RMMOxkAePQ259lbkwbZpied-fAsxtbJml5DqJHmekiRfoIN7BKaZRaWdDoemGZlQe4L5IlHzvlmMii8Ak12ILKkrRED6wtzmILqOrFbR66j5ogUu-MTPXAR74W5aCL_sT7I8sHU8_a_rrjfASL8QWQew3KQ7YJsKT_QvrcUgKo8vWtlP_t39stgUojiKFGYskGDiD_cq0OV-m3928DCXROn1WJq6w0LwQ3efznL3Mk1vv9y4',
   };
 
   var url = Uri.parse('https://api.spotify.com/v1/me');

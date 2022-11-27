@@ -10,7 +10,7 @@ Future<ArtistModel?> getArtistServices() async {
  var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer BQC783rBklwSGuhmAfS0Wnw6E4wzwnnWhnTB2izkxgw4fk1C_HaxGQt52_qcgECpOs95Ni1vqxAzR1AYZNVtWOQ-p5k4y93MENoYbSrlezbp_5WUb9_MpyLRw4_KQkPbY9WrSm-1DBzhnaI_pmV62kfPvUlENdUC0xRupsodu4NDXvMhIlQOVdZOQt_3uEqXRek',
+    'Authorization': 'Bearer BQBF_60fNJehecQKdwqlk_VvxvjZWm-pU8SOkMRSRFt2zumMbmu1Fhi4HiGP0TbwaGGyD6wZi9wzYzibfqGo1XXea0pT9D0jMPXmYHwtktj0DuLoPjIKjAVgVVLSC4srtaRecVcHK5pG47dh6uEBzpnWzPT2VEJRrziuuQnLb_5bXfholxh4EhbotKUchGvQ01zBvWjez6clOiFDTY-4L3F_jOosumkmO619Z1pDYzNbGlbP0CG8whkGoESp6wbUezXxCGHXLtjzI0IzOgo4zLNG8y9g_lPZv2jN2f318Y7E',
   };
 
   var params = {

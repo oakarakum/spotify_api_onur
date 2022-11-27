@@ -4,6 +4,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/providers/artist_provider.dart';
 import 'package:spotify_api_onur/src/providers/bot_navbar_provider.dart';
 import 'package:spotify_api_onur/src/providers/categories_provider.dart';
+import 'package:spotify_api_onur/src/providers/fav_artist_album_provider.dart';
+import 'package:spotify_api_onur/src/providers/fav_artist_provider.dart';
 import 'package:spotify_api_onur/src/providers/fav_mixes_provider.dart';
 import 'package:spotify_api_onur/src/providers/profile_info_provider.dart';
 import 'package:spotify_api_onur/src/providers/profile_playlist_provider.dart';
@@ -11,8 +13,10 @@ import 'package:spotify_api_onur/src/providers/random_playlist_provider.dart';
 import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
 
 void main() {
-  runApp(MultiProvider(//
-    providers: [//
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: ((context) => FavArtAlbumProvider())),
+      ChangeNotifierProvider(create: ((context) => FavArtistProvider())),
       ChangeNotifierProvider(create: ((context) => BottomNavigationProvider())),
       ChangeNotifierProvider(create: ((context) => ProfilePlaylistProvider())),
       ChangeNotifierProvider(create: ((context) => RandomPlayListProvider())),

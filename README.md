@@ -1,20 +1,4 @@
-# spotify_api_onur
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-![fav artist  page](https://user-images.githubusercontent.com/113251720/204162322-05825bec-fca0-468c-b01e-d0456f4fb7b0.JPG)
-![profile page](https://user-images.githubusercontent.com/113251720/204162323-9b30c5e3-610d-4704-9c34-61ef5d2b4676.JPG)
-![browse](https://user-images.githubusercontent.com/113251720/204162324-08380c06-4b1c-4aa1-a1fb-a3dbcff62be6.JPG)
-![homepage1](https://user-images.githubusercontent.com/113251720/204162325-4a6ff069-6304-4f4e-bd40-f0a189b0498f.JPG)
+![homepage1](https://user-images.githubusercontent.com/113251720/204162353-b32824c2-3dd9-490a-85cc-a0feb59e209a.JPG)
+![browse](https://user-images.githubusercontent.com/113251720/204162354-a7b544ea-48aa-4669-a292-27e83406567c.JPG)
+![fav artist  page](https://user-images.githubusercontent.com/113251720/204162355-13d18c15-fc20-4fae-bf01-f432c1a7aef5.JPG)
+![profile page](https://user-images.githubusercontent.com/113251720/204162357-79fad24c-f4b1-4002-bbdb-174dbb07131e.JPG)

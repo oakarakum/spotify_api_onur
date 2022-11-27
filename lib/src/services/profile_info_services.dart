@@ -13,18 +13,17 @@ Future<ProfileInfoModel?> getInfoService() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQAq3PmP0VHcwbJKjPqQixxXaSCvMAtJULFmvRTLdTWJfoL0da_gtGi-_6pJMfa6OU-1m4QrtttP6d_eZcCQ4VMv7KUtlL7vR8upaK9shNa3Xy_zCZo8mt717ZwzmA3HGjBPbM3QcotqVXw8ZTnU9l8Otp_r8Y4tU4auq9CUzqyQDhsYOzVdUs2VyuZl1XsXto3XuM33E28rVDh8EH3dkO6yv2lj7eVq3FzrpxUZQOOd8-ydYp0IpOb4ek8rG49ZiySfaxxtKyaC-Bkq1slmWuOo75qwERg',
+        'Bearer BQD3IUvN88xt9DLdHyy7Cs-8GeAcBELTLLZIe2OqDlpxiuf6Qzm7dGLiLoKsLAxQlekE8RHlzx6GcQFqi_g-q7F14_6hsILCzL0XNFzW-t5tQXZ4Gbuny-Wk-sQJcQyInz61T2TRLBc4FZzOykUxbMLdcOX2ZhXElHNKhaFbTjtjQEDs6vvTeQJlRpjop6eIcLf6K_3uEo2Q6RH7hHvth-Tc2IrJ9yMlgJETl6W9-IK6fcoJtQvwyhrgc-VkI0-faKSTyAvqZUiju_AluE1DtZRPjOaLPVmqcvdrOg6UeiwX',
   };
 
   var url = Uri.parse('https://api.spotify.com/v1/me');
-
   var res = await http.get(url, headers: headers);
   if (res.statusCode == 200) {
     //print(res.body);
     data2 = ProfileInfoModel.fromJson(jsonDecode(res.body));
     return data2;
   } else {
-    print("Başarısız");
+    //print("Başarısız");
     return null;
   }
 }

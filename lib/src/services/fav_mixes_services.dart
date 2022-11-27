@@ -23,11 +23,11 @@ Future<FavMixModel?> getFavMixesServices() async {
   var res = await http.get(url, headers: headers);
 
   if (res.statusCode == 200) {
-    print(res.body);
+    //print(res.body);
     data4 = FavMixModel.fromJson(jsonDecode(res.body));
     return data4;
   } else {
-    print("Action Failed");
+    //print("Action Failed");
     return null;
   }
 }

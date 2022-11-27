@@ -10,7 +10,7 @@ Future<ArtistModel?> getArtistServices() async {
  var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer BQC5o43tD6WQWOKLsF0VhVZF8mxoDBgsX8Og4MShPo1gDY8YqHRzSknYH2TOg1G5CtJJVKEkMHcazrDh-TNWYSlIz10v1fv-oKOklnoKprOFLI6hBhpkaGNk8vB-axcAPgEf_jlhKanlU8NDYYxb-yo5D7D7TOusKVCAbccTQ0aW7qSX035D6NJCaxO8QP60TOajtXnE-Bz8bz5VwC5CvACMv5iEHTUbopXoM6C6MXB7PuaQRRCMUo98VORy0gmy4bMIsaXbsVedOhQUbcxvGjOsNr9NFQmdNa66OQl5yB5j',
+    'Authorization': 'Bearer BQC783rBklwSGuhmAfS0Wnw6E4wzwnnWhnTB2izkxgw4fk1C_HaxGQt52_qcgECpOs95Ni1vqxAzR1AYZNVtWOQ-p5k4y93MENoYbSrlezbp_5WUb9_MpyLRw4_KQkPbY9WrSm-1DBzhnaI_pmV62kfPvUlENdUC0xRupsodu4NDXvMhIlQOVdZOQt_3uEqXRek',
   };
 
   var params = {
@@ -26,7 +26,7 @@ Future<ArtistModel?> getArtistServices() async {
     data3 = ArtistModel.fromJson(jsonDecode(res.body));
     return data3;
   } else {
-    print("Action Failed");
+    //print("Action Failed");
     return null;
   }
 }

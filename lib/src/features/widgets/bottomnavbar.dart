@@ -55,7 +55,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     height: 0.8.h,
                     width: 7.w,
                     decoration: BoxDecoration(
-                        color: Color(0xffFAFAFA),
+                        color: value.index == 2
+                            ? Color(0xff42C83C)
+                            : Color(0xffFAFAFA),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(15),
                             bottomRight: Radius.circular(15))),

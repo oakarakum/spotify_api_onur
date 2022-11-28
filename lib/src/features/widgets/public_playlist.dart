@@ -32,7 +32,9 @@ class _PublicPlayListState extends State<PublicPlayList> {
               height: 60.h,
               width: double.infinity,
               child: ListView.builder(
-                  itemCount: 20, //length gelecek
+                  itemCount: value.profilePlaylist.items![0].track!.name
+                      .toString()
+                      .length,
                   itemBuilder: ((context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
@@ -43,54 +45,56 @@ class _PublicPlayListState extends State<PublicPlayList> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              height: 7.h,
-                              width: 15.w,
+                              height: 9.h,
+                              width: 20.w,
                               decoration: BoxDecoration(
-                                
-                                  borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10),
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                  image: DecorationImage(fit: BoxFit.contain,
+                                  borderRadius: BorderRadius.circular(40),
+                                  image: DecorationImage(
                                       image: NetworkImage(
-                                        value.profilePlaylist.items![index]
-                                            .track!.album!.images![2].url
-                                            .toString(),
-                                      ))),
-                              child: Image.network(value.profilePlaylist
-                                  .items![index].track!.album!.images![0].url
-                                  .toString()),
+                                    value.profilePlaylist.items![index].track!
+                                        .album!.images![2].url
+                                        .toString(),
+                                  ))),
+                              child: Image.network(
+                                value.profilePlaylist.items![index].track!
+                                    .album!.images![0].url
+                                    .toString(),
+                                fit: BoxFit.fitWidth,
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.w),
                               child: SizedBox(
-                                width: 43.w,
+                                width: 41.w,
                                 height: 7.h,
                                 child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(value.profilePlaylist.items![index]
-                                          .track!.name
-                                          .toString()),
-                                      /* Text(value.publicPlayList.description!
-                                    ,
-                                  //"dont smile at me",
-                                      style: TextStyle(
-                                          color: Color(0xff222222),
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 2.2.h)), */
-
-                                      SizedBox(
-                                        height: .5.h,
+                                      FittedBox(
+                                        child: Text(
+                                            value.profilePlaylist.items![index]
+                                                .track!.name
+                                                .toString(),
+                                            style: TextStyle(
+                                                color: Color(0xff222222),
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 2.3.h)),
                                       ),
-                                      Text("Singer Name",
-                                          style: TextStyle(
-                                              color: Color(0xff222222),
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 1.6.h)),
+                                      SizedBox(
+                                        height: 1.5.h,
+                                      ),
+                                      FittedBox(
+                                        child: Text(
+                                            value.profilePlaylist.items![index]
+                                                .track!.artists![0].name!
+                                                .toString(),
+                                            style: TextStyle(
+                                                color: Color(0xff222222),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 2.h)),
+                                      ),
                                     ]),
                               ),
                             ),
@@ -100,22 +104,19 @@ class _PublicPlayListState extends State<PublicPlayList> {
                                 height: 5.h,
                                 child: Center(
                                     child: Padding(
-                                  padding: EdgeInsets.only(right: 8.w),
+                                  padding: EdgeInsets.only(right: 6.w),
                                   child: Text("5:33"),
                                 ))),
-                            Padding(
-                              padding: EdgeInsets.only(left: 3.w),
-                              child: SizedBox(
-                                width: 10.w,
-                                height: 5.h,
-                                child: Center(
-                                  child: GestureDetector(
-                                      onTap: () {},
-                                      child: Icon(
-                                        Icons.more_horiz_outlined,
-                                        color: Color(0xffA68C8C),
-                                      )),
-                                ),
+                            SizedBox(
+                              width: 10.w,
+                              height: 5.h,
+                              child: Center(
+                                child: GestureDetector(
+                                    onTap: () {},
+                                    child: Icon(
+                                      Icons.more_horiz_outlined,
+                                      color: Color(0xffA68C8C),
+                                    )),
                               ),
                             )
                           ]),

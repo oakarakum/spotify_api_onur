@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spotify_api_onur/src/ui/pages/search_screen.dart';
+import 'package:spotify_api_onur/src/providers/album_tracks_provider.dart';
 import 'package:spotify_api_onur/src/providers/artist_provider.dart';
 import 'package:spotify_api_onur/src/providers/bot_navbar_provider.dart';
 import 'package:spotify_api_onur/src/providers/categories_provider.dart';
@@ -10,11 +12,14 @@ import 'package:spotify_api_onur/src/providers/fav_mixes_provider.dart';
 import 'package:spotify_api_onur/src/providers/profile_info_provider.dart';
 import 'package:spotify_api_onur/src/providers/profile_playlist_provider.dart';
 import 'package:spotify_api_onur/src/providers/random_playlist_provider.dart';
+import 'package:spotify_api_onur/src/providers/search_list_providers.dart';
 import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
 
 void main() {
   runApp(MultiProvider(
     providers: [
+      ChangeNotifierProvider(create: ((context) => SearchListProvider())),
+      ChangeNotifierProvider(create: ((context) => AlbumTracksProvider())),
       ChangeNotifierProvider(create: ((context) => FavArtAlbumProvider())),
       ChangeNotifierProvider(create: ((context) => FavArtistProvider())),
       ChangeNotifierProvider(create: ((context) => BottomNavigationProvider())),

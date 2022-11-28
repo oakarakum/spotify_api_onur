@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/ui/pages/homepage_screen.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  const CustomAppBar({
+class CustomAppBarSearchScreen extends StatelessWidget with PreferredSizeWidget {
+  const CustomAppBarSearchScreen({
     Key? key,
   }) : super(key: key);
 
@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 4.h),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
@@ -47,22 +47,16 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   ),
                 )),
             Padding(
-              padding: EdgeInsets.only(right: 3.w),
+              padding: EdgeInsets.only(left: 29.w),
               child: Text(
-                "Profile",
+                "Search",
                 style: TextStyle(
                     color: Color(0xff222222),
                     fontWeight: FontWeight.w600,
                     fontSize: 3.h),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(right: 3.w),
-              child: Icon(
-                Icons.more_vert,
-                color: Color(0xffA68C8C),
-              ),
-            )
+            
           ],
         ),
       ),

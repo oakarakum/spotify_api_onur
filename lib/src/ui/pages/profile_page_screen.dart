@@ -148,7 +148,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontSize: 2.2.h,
                         fontWeight: FontWeight.w700)),
               ),
-              //Public Playlists
               PublicPlayList()
             ],
           ),

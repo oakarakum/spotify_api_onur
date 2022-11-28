@@ -11,7 +11,7 @@ Future<FavMixModel?> getFavMixesServices() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQCBqjEcvIj15uxHPQ78nCYAzSeETUCncLb3V38dExjWnCYv_5B8v5N79WOReD80ERVLTrZJbaPBC-rCvYw7Mj_C4H7oOWQ4L2XMyWeef1QfwmR3KxT2y2zhHXK86FUo6Emc4ZGWaCA91UjGIyTtaaFfcvo7YRikORfNrhBQZmIjfF0PV6w2utpWhmh7wvVQv8Kgrat9P4j6GUzku3Wz79Jtoy4qPNA8coIZvgSO4V45z9ShmrEYIX9qazIYzRaqW1OB0jBASpNGerTiw8Hd3ecrNd94pBhSuAhVmJmG376N',
+        'Bearer BQBQCQyBwddtZCKwCngz4LBEegZnwmVJ1UYWMm_DVpFmqnQFrJ2qgapNc6A8MZEMYYjbdt0l0ehcV3mTsXfpbiyosb7oTeRumOhGAlPHs5C-rzdkQHKgKpwNW9gkWRULGsWkaS1rjT62Nf96UPs5P1qlv77j8UnFdv8Lz842QRXJwjTqJVdVqxjqgu0C_sUO-K-RHXwzWK8jV_g-f8i9L0gl4BbykIDLUjZoJAifqog2bpN3LUOiTiQZttYf3yj8GrqxdARUOlDHNST7dajuUq5Vercp0tgYQYUx9ho4HZPm',
   };
 
   var params = {
@@ -35,27 +35,4 @@ Future<FavMixModel?> getFavMixesServices() async {
 }
 
 
-/* 
 
-import 'package:http/http.dart' as http;
-
-void main() async {
-  var headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer BQBj4jXiXy9GFg4-kqJKqpHIvolk-TYx3mf-OGKrb_wK6lGI3F_62v4AifFFSSsQcr5H9w9j--zum9AQ4tZmesIOoNkv1QA66woJ9jV-nSacC8JAj4ENVN0IBtbVofXZxUR1QZI0XQX661fmJCVpxGMkH-DsabeaWRNnJOSAqpoicJrqsIK02AaryvzrzmeyXCeInRYLw8T179eJX1dHx6PGbv691r2afrJ9QKEzUMCqk-3U3RiEzkBeWcSSrIRvdzDJ6oFtIjpmCgNm4B4FW396dNlpP5J0NwMFRs0Q340K',
-  };
-
-  var params = {
-    'market': 'TR',
-    'ids': '7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B',
-  };
-  var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
-
-  var url = Uri.parse('https://api.spotify.com/v1/tracks?$query');
-  var res = await http.get(url, headers: headers);
-  if (res.statusCode != 200) throw Exception('http.get error: statusCode= ${res.statusCode}');
-  print(res.body);
-}
-
- */

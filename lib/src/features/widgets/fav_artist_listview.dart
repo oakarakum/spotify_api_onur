@@ -26,7 +26,8 @@ class _FavouriteArtistsState extends State<FavouriteArtists> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ArtistProvider>(builder: ((context, value, widget) {
-      return SizedBox(
+      return value.artistList.artists != null
+      ? SizedBox(
         height: 24.h,
         width: 100.w,
         child: ListView.builder(
@@ -75,6 +76,8 @@ class _FavouriteArtistsState extends State<FavouriteArtists> {
                 ],
               );
             })),
+      ): LinearProgressIndicator(
+        color: Colors.green,backgroundColor: Colors.black,
       );
     }));
   }

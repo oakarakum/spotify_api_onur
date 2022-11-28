@@ -40,7 +40,7 @@ class _SongsListViewState extends State<SongsListView> {
             child: ListView.builder(
                 itemCount: value.albumTracks.items!.length, //length gelecek
                 itemBuilder: ((context, index) {
-                  return value.albumTracks != null
+                  return value.albumTracks.href != null
                       ? Padding(
                           padding: EdgeInsets.only(
                             top: 2.h,

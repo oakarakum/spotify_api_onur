@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
 import 'package:spotify_api_onur/src/features/widgets/browse_textformfield.dart';
-import 'package:spotify_api_onur/src/features/widgets/browse_types.dart';
+import 'package:spotify_api_onur/src/features/widgets/search_list.dart';
 
 class BrowseScreen extends StatefulWidget {
   const BrowseScreen({super.key});
@@ -27,7 +25,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
       bottomNavigationBar: BottomNavBar(),
       body: SingleChildScrollView(
         child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5.w),
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +49,8 @@ class _BrowseScreenState extends State<BrowseScreen> {
                           fontWeight: FontWeight.w600))),
               SizedBox(height: 3.h),
               //Gridview burada
-              BrowseTypes()
+              SearchList()
+              //BrowseTypes()
             ],
           ),
         ),

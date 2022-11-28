@@ -10,7 +10,7 @@ Future<FavArtistModel?> getFavArtistServices() async {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization':
-        'Bearer BQCBqjEcvIj15uxHPQ78nCYAzSeETUCncLb3V38dExjWnCYv_5B8v5N79WOReD80ERVLTrZJbaPBC-rCvYw7Mj_C4H7oOWQ4L2XMyWeef1QfwmR3KxT2y2zhHXK86FUo6Emc4ZGWaCA91UjGIyTtaaFfcvo7YRikORfNrhBQZmIjfF0PV6w2utpWhmh7wvVQv8Kgrat9P4j6GUzku3Wz79Jtoy4qPNA8coIZvgSO4V45z9ShmrEYIX9qazIYzRaqW1OB0jBASpNGerTiw8Hd3ecrNd94pBhSuAhVmJmG376N',
+        'Bearer BQADIX8lTGLaysNIZehQ5sM1rfV0oGJJCXm0eH159FZsVSwguprQ_vkk08MJeIu6VibkrO-GoaAB3hZ45XFw2zY7fEUEKVsU19Rlk-I7SSb8ixBruBoi-bEcoCHmFXkujUiFENFj-MTzNKBiGxEJELEsKNkKRKQFDRLMKy67a99bTEey842lmLnyVseNRMXQuAsNJ0dbL16L5rLJaH1WBPg7SIXzc-hhl8FwcfYObHiTuxlza-ty8A5aPZCtiGiRkk8voB7uzkFYVbyZKaDGK5lC5Db9Q8Mo53T3Vejx7OtY',
   };
 
   var params = {

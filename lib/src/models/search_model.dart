@@ -1,10 +1,10 @@
-class SearchModel {
+class SearchModels {
   Artists? artists;
   Artists? tracks;
 
-  SearchModel({this.artists, this.tracks});
+  SearchModels({this.artists, this.tracks});
 
-  SearchModel.fromJson(Map<String, dynamic> json) {
+  SearchModels.fromJson(Map<String, dynamic> json) {
     artists =
         json['artists'] != null ? new Artists.fromJson(json['artists']) : null;
     tracks =
@@ -25,7 +25,7 @@ class SearchModel {
 
 class Artists {
   String? href;
-  List<Items>? items;
+  List<SubItems>? items;
   int? limit;
   String? next;
   int? offset;
@@ -44,9 +44,9 @@ class Artists {
   Artists.fromJson(Map<String, dynamic> json) {
     href = json['href'];
     if (json['items'] != null) {
-      items = <Items>[];
+      items = <SubItems>[];
       json['items'].forEach((v) {
-        items!.add(new Items.fromJson(v));
+        items!.add(new SubItems.fromJson(v));
       });
     }
     limit = json['limit'];
@@ -196,9 +196,9 @@ class Images {
   }
 }
 
-class Items2 {
+class SubItems {
   Album? album;
-  List<Artists>? artists;
+  List<SubArtists>? artists;
   int? discNumber;
   int? durationMs;
   bool? explicit;
@@ -215,7 +215,7 @@ class Items2 {
   String? type;
   String? uri;
 
-  Items2(
+  SubItems(
       {this.album,
       this.artists,
       this.discNumber,
@@ -234,12 +234,12 @@ class Items2 {
       this.type,
       this.uri});
 
-  Items2.fromJson(Map<String, dynamic> json) {
+  SubItems.fromJson(Map<String, dynamic> json) {
     album = json['album'] != null ? new Album.fromJson(json['album']) : null;
     if (json['artists'] != null) {
-      artists = <Artists>[];
+      artists = <SubArtists>[];
       json['artists'].forEach((v) {
-        artists!.add(new Artists.fromJson(v));
+        artists!.add(new SubArtists.fromJson(v));
       });
     }
     discNumber = json['disc_number'];
@@ -296,7 +296,7 @@ class Items2 {
 
 class Album {
   String? albumType;
-  List<Artists>? artists;
+  List<SubArtists>? artists;
   ExternalUrls? externalUrls;
   String? href;
   String? id;
@@ -325,9 +325,9 @@ class Album {
   Album.fromJson(Map<String, dynamic> json) {
     albumType = json['album_type'];
     if (json['artists'] != null) {
-      artists = <Artists>[];
+      artists = <SubArtists>[];
       json['artists'].forEach((v) {
-        artists!.add(new Artists.fromJson(v));
+        artists!.add(new SubArtists.fromJson(v));
       });
     }
     externalUrls = json['external_urls'] != null
@@ -373,7 +373,7 @@ class Album {
   }
 }
 
-class Artists2 {
+class SubArtists {
   ExternalUrls? externalUrls;
   String? href;
   String? id;
@@ -381,10 +381,10 @@ class Artists2 {
   String? type;
   String? uri;
 
-  Artists2(
+  SubArtists(
       {this.externalUrls, this.href, this.id, this.name, this.type, this.uri});
 
-  Artists2.fromJson(Map<String, dynamic> json) {
+  SubArtists.fromJson(Map<String, dynamic> json) {
     externalUrls = json['external_urls'] != null
         ? new ExternalUrls.fromJson(json['external_urls'])
         : null;

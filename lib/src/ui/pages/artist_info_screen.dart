@@ -10,11 +10,22 @@ import 'package:spotify_api_onur/src/providers/fav_artist_provider.dart';
 import 'package:spotify_api_onur/src/ui/pages/artist_all_songs.dart';
 import 'package:spotify_api_onur/src/ui/pages/browse_screen.dart';
 
+import '../../features/widgets/bottomnavbar.dart';
+
 class ArticsScreen extends StatefulWidget {
   const ArticsScreen({super.key});
 
   @override
   State<ArticsScreen> createState() => _ArticsScreenState();
+}
+
+extension StringCasingExtension on String {
+  String toCapitalized() =>
+      length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
+  String toTitleCase() => replaceAll(RegExp(' +'), ' ')
+      .split(' ')
+      .map((str) => str.toCapitalized())
+      .join(' ');
 }
 
 class _ArticsScreenState extends State<ArticsScreen> {
@@ -33,6 +44,7 @@ class _ArticsScreenState extends State<ArticsScreen> {
           toolbarHeight: 0,
           backgroundColor: Colors.white,
         ),
+        bottomNavigationBar: BottomNavBar(),
         body: Consumer<FavArtistProvider>(
           builder: (context, value, widget) {
             return SingleChildScrollView(
@@ -85,7 +97,7 @@ class _ArticsScreenState extends State<ArticsScreen> {
                         ),
                         SizedBox(height: 1.h),
                         Text(
-                          "${value.favArtistname!.artists!.items![0].followers!.total.toString()} followers , ${value.favArtistname!.artists!.items![0].popularity!} Popularity",
+                          "${value.favArtistname!.artists!.items![0].followers!.total.toString()} Followers , ${value.favArtistname!.artists!.items![0].popularity!} Popularity",
                           style: TextStyle(
                               color: Color(0xff222222),
                               fontWeight: FontWeight.w300,
@@ -94,9 +106,18 @@ class _ArticsScreenState extends State<ArticsScreen> {
                         SizedBox(height: 1.h),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.w),
-                          child: Text(//substring(1, loginToken.length() - 1)
-                            //value.favArtistname!.artists!.items![3].genres!.replaceAll("[", "").replaceAll("]", "").toString(),
-                            "Lorem Ipsum Dolor Sit Amet, Consectetur \nAdipiscing Elit. Turpis Adipiscing Vestibulum Orci\n                     Enim, Nascetur Vitae ",
+                          child: Text(
+                            //Artist'in oluştuduğu genre listesi
+                            value.favArtistname!.artists!.items![3].genres!
+                                .toString()
+                                .substring(
+                                    1,
+                                    value.favArtistname!.artists!.items![3]
+                                            .genres!
+                                            .toString()
+                                            .toTitleCase()
+                                            .length -
+                                        1),
                             style: TextStyle(
                                 color: Color(0xff838383),
                                 fontWeight: FontWeight.w300,

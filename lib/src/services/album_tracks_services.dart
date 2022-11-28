@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:spotify_api_onur/src/models/fav_artist_album_model.dart';
+import 'package:spotify_api_onur/src/models/album_tracks_model.dart';
 
-Future<FavArtAlbumModel?> getFavArtAlbumServices() async {
-  FavArtAlbumModel? data16;
+Future<AlbumTracksModel?> getAlbumTracksServices() async {
+  AlbumTracksModel data19;
 
   var headers = {
     'Accept': 'application/json',
@@ -15,20 +15,20 @@ Future<FavArtAlbumModel?> getFavArtAlbumServices() async {
 
   var params = {
     'market': 'TR',
-    'limit': '5',
+    'limit': '15',
     'offset': '0',
   };
   var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
 
   var url = Uri.parse(
-      'https://api.spotify.com/v1/artists/09gCQtZS27dL7ekcYLKXsS/albums?$query');
+      'https://api.spotify.com/v1/albums/5iDHYiybU2wC5xhRjjCVEX/tracks?$query');
   var res = await http.get(url, headers: headers);
-
   if (res.statusCode == 200) {
-    data16 = FavArtAlbumModel.fromJson(jsonDecode(res.body));
-    return data16;
+    print(res.body);
+    data19 = AlbumTracksModel.fromJson(jsonDecode(res.body));
+    return data19;
   } else {
-    //print("Başarısız");
+    //print("Action Failed");
     return null;
   }
 }

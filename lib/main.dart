@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:spotify_api_onur/src/features/widgets/search_list.dart';
+import 'package:spotify_api_onur/src/ui/pages/search_screen.dart';
 import 'package:spotify_api_onur/src/providers/album_tracks_provider.dart';
 import 'package:spotify_api_onur/src/providers/artist_provider.dart';
 import 'package:spotify_api_onur/src/providers/bot_navbar_provider.dart';
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
               scaffoldBackgroundColor: Colors.white,
               primarySwatch: Colors.blue,
             ),
-            home: SearchList());
+            home: HomePageScreen());
       },
     );
   }

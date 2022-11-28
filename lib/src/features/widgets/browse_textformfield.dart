@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spotify_api_onur/src/ui/pages/search_screen.dart';
 
 class BrowseTextformfield extends StatefulWidget {
   const BrowseTextformfield({super.key});
@@ -14,12 +17,15 @@ class _BrowseTextformfieldState extends State<BrowseTextformfield> {
     return SizedBox(
       height: 5.3.h,
       child: TextFormField(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SearchList()));
+        },
         style: TextStyle(color: Color(0xffFAFAFA)),
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.all(0),
-            //isDense: true,
             fillColor: Colors.green,
             filled: true,
             prefixIcon: IconButton(

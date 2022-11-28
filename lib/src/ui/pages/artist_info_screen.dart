@@ -51,7 +51,7 @@ class _ArticsScreenState extends State<ArticsScreen> {
           builder: (context, value, widget) {
             return value.favArtistname!.artists != null
                 ? FadeInRightBig(
-                    delay: Duration(milliseconds: 50000),
+                    delay: Duration(milliseconds: 500),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,

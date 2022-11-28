@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
 import 'package:spotify_api_onur/src/features/widgets/browse_textformfield.dart';
-import 'package:spotify_api_onur/src/features/widgets/search_list.dart';
+
+import '../../features/widgets/browse_types.dart';
 
 class BrowseScreen extends StatefulWidget {
   const BrowseScreen({super.key});
@@ -49,8 +50,8 @@ class _BrowseScreenState extends State<BrowseScreen> {
                           fontWeight: FontWeight.w600))),
               SizedBox(height: 3.h),
               //Gridview burada
-              SearchList()
-              //BrowseTypes()
+
+              BrowseTypes()
             ],
           ),
         ),

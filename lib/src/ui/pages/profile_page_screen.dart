@@ -30,17 +30,16 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 236, 232, 232),
       appBar: CustomAppBar(),
-      //extendBodyBehindAppBar: true,
       bottomNavigationBar: BottomNavBar(),
       body: SingleChildScrollView(
         child: FadeInDown(
-          delay: Duration(seconds: 2),
+          delay: Duration(seconds: 1),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Consumer<ProfileInfoProvider>(builder: ((context, value, widget) {
-                return value.profileInfo != null
+                return value.profileInfo.email != null
                     ? Container(
                         height: 32.9.h,
                         width: 100.w,

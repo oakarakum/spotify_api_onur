@@ -5,7 +5,7 @@ import 'package:spotify_api_onur/src/models/search_model.dart';
 final Dio _dio =
     Dio(BaseOptions(baseUrl: "https://api.spotify.com/v1/", headers: {
   "Authorization":
-      "Bearer BQAo1TSLM_NNKmta_ZdGFeqZjj6tO2liblXLjZyDOv9eGj9GV6RBXimEbDx7w_q6MyPMRSd1pyTQA_N06CJTz-WBwiaagRJF3h2rEnCE_ioQ_CDTiXsFQiCL_jrUwEZACWQG_kfoIOgGcIPnUantu_d3C40ZCdGSi6V1e2FX6lpy8ZpxAEURxfZCdNhaJkYeE_gNR_DfxnZc22szAih5BW2XlQ9cT1m1I7ylzSlNQ0DjrCoRKpsCoZS0N7l5TLQKEdXJBUPVGIvsOEbDAunWc1fXtcu-aST-OnjgwpM74j-4"
+      "Bearer BQC3fBsLuXNGZ3evtIZ4FEzoMqlA45efUH0ivregWghV-xM2gncK5rNdiLErcqpIh446BIwOQlv-lLMqR9iC1rjWqJ3GKUPK_ZC71dH00vbuNf7pHJDNXOSbW6oS7Yzirlf69BVlLEokbaI09ygmwLMQC5YAI06EwdEOxi88dZYaLRYlhOh3YV7tuISA2H91NT2lwR-OpQ2f_fd6S1RjUpssiVf3r7kIe9V_Uot0A5ANYwj4rw_JrRPzRJUb86yd1XRsvzkVWuLPl1EURpRLSu6utsffPAO1_cnFAfKAYCe1"
 }));
 
 Future<SearchModels?> getSearchDataService(String query) async {
@@ -29,5 +29,6 @@ Future<SearchModels?> getSearchDataService(String query) async {
   } catch (e) {
     log(e.toString());
   }
+  
   return null;
 }

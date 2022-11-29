@@ -91,11 +91,8 @@ class _SongsListViewState extends State<SongsListView> {
                                         ]),
                                   ),
                                 ),
-                                SizedBox(width: 8.w),
-                                SizedBox(
-                                    width: 10.w,
-                                    height: 5.h,
-                                    child: Center(child: Text("5:33"))),
+                                SizedBox(width: 18.w),
+                                
                                 Padding(
                                   padding: EdgeInsets.only(left: 6.w),
                                   child: SizedBox(

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/search_appbar.dart';
+import 'package:spotify_api_onur/src/features/widgets/search_screen_widgets/search_page_album_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/search_screen_widgets/search_texformfield.dart';
 import 'package:spotify_api_onur/src/providers/search_list_providers.dart';
 
 class SearchList extends StatefulWidget {
@@ -36,8 +38,8 @@ class _SearchListState extends State<SearchList> {
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 1.h),
-                          child: //SearchPageTextfield()//
-                              SearchPageTextfield(value),
+                          child: SearchTextformfield()
+                             
                         ),
                         Padding(
                             padding: EdgeInsets.symmetric(vertical: 1.h),
@@ -50,7 +52,7 @@ class _SearchListState extends State<SearchList> {
                             )),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 1.h),
-                          child: SearchPage_Albums_Listview(value),
+                          child: SearchPageAlbumListview()
                         ),
                       ],
                     ),
@@ -60,92 +62,5 @@ class _SearchListState extends State<SearchList> {
         ));
   }
 
-  TextFormField SearchPageTextfield(SearchListProvider value) {
-    return TextFormField(
-      onChanged: (deger) {
-        value.getQuery(deger);
-      },
-      style: TextStyle(color: Color(0xffFAFAFA)),
-      textAlign: TextAlign.start,
-      textAlignVertical: TextAlignVertical.center,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(0),
-          //isDense: true,
-          fillColor: Colors.green,
-          filled: true,
-          prefixIcon: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            color: Colors.white,
-            iconSize: 3.h,
-          ),
-          prefixIconColor: Colors.white,
-          hintText: "Ne dinlemek istiyorsun?",
-          hintStyle: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(5)),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(5))),
-    );
-  }
-
-  SearchPage_Albums_Listview(SearchListProvider value) {
-    return SizedBox(
-      height: 65.h,
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  height: 10.h,
-                  width: 22.w,
-                  margin: EdgeInsets.only(bottom: 2.h),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(value.searchlist.tracks!.items![index]
-                          .album!.images![0].url
-                          .toString()),
-                    ),
-                  )),
-              SizedBox(width: 3.w),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 1.h),
-                    child: Text(
-                      value.searchlist.tracks!.items![0].album!.name!,
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 2.h,
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  Text(
-                    "",
-                    //value.searchlist.artists!.items![index].artists![0].name!.toString(),
-                    style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 2.h,
-                        fontWeight: FontWeight.w800),
-                  ),
-                ],
-              ),
-            ],
-          );
-        },
-      ),
-    );
-  }
+ 
 }

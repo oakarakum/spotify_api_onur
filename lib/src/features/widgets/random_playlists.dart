@@ -16,14 +16,6 @@ class RandomPlayLists extends StatefulWidget {
 
 class _RandomPlayListsState extends State<RandomPlayLists> {
   @override
-  void initState() {
-    RandomPlayListProvider? data3;
-    super.initState();
-    data3 = Provider.of<RandomPlayListProvider>(context, listen: false);
-    data3.getRandomPlayList();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Consumer<RandomPlayListProvider>(builder: ((context, value, widget) {
       return value.randomPlayList.href != null

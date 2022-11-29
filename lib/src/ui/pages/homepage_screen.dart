@@ -2,12 +2,17 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
 import 'package:spotify_api_onur/src/features/widgets/fav_artist_listview.dart';
 import 'package:spotify_api_onur/src/features/widgets/favorite_mixes_listview.dart';
 import 'package:spotify_api_onur/src/features/widgets/homepage_appbar.dart';
 import 'package:spotify_api_onur/src/features/widgets/random_playlists.dart';
+
+import '../../providers/artist_provider.dart';
+import '../../providers/fav_mixes_provider.dart';
+import '../../providers/random_playlist_provider.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -17,6 +22,20 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
+  @override
+  void initState() {
+    FavouriteMixesProvider? data4;
+    super.initState();
+    data4 = Provider.of<FavouriteMixesProvider>(context, listen: false);
+    data4.getFavMixes();
+    ArtistProvider? data3;
+    data3 = Provider.of<ArtistProvider>(context, listen: false);
+    data3.getArtist();
+    RandomPlayListProvider? data5;
+    data5 = Provider.of<RandomPlayListProvider>(context, listen: false);
+    data5.getRandomPlayList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

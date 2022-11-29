@@ -18,16 +18,3 @@ class SearchListProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
-
-
-/* 
-class RandomPlayListProvider with ChangeNotifier {
-  RandomPlayListModel randomPlayList = RandomPlayListModel();
-  bool isRandomPlaylistLoaded = false;
-
-  getRandomPlayList() async {
-    randomPlayList = (await getRandomPlayListServices())!;
-    bool isRandomPlaylistLoaded = true;
-    notifyListeners();
-  }
-} */

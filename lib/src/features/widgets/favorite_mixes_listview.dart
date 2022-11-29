@@ -15,14 +15,6 @@ class FavouriteMixes extends StatefulWidget {
 
 class _FavouriteMixesState extends State<FavouriteMixes> {
   @override
-  void initState() {
-    FavouriteMixesProvider? data4;
-    super.initState();
-    data4 = Provider.of<FavouriteMixesProvider>(context, listen: false);
-    data4.getFavMixes();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Consumer<FavouriteMixesProvider>(builder: ((context, value, widget) {
       return value.favMixesList.tracks != null
@@ -64,7 +56,10 @@ class _FavouriteMixesState extends State<FavouriteMixes> {
                     );
                   })),
             )
-          : LinearProgressIndicator();
+          : LinearProgressIndicator(
+              backgroundColor: Colors.black,
+              color: Colors.green,
+            );
     }));
   }
 }

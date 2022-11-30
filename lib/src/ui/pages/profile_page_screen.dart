@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
-import 'package:spotify_api_onur/src/features/widgets/profile_appbar.dart';
-import 'package:spotify_api_onur/src/features/widgets/public_playlist.dart';
+import 'package:spotify_api_onur/src/features/widgets/profile_page_screen_widgets/profile_appbar.dart';
+import 'package:spotify_api_onur/src/features/widgets/profile_page_screen_widgets/public_playlist.dart';
 import 'package:spotify_api_onur/src/providers/profile_info_provider.dart';
 
 class ProfilePage extends StatefulWidget {

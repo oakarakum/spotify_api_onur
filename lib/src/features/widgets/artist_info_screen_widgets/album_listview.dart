@@ -7,7 +7,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/providers/fav_artist_album_provider.dart';
 import 'package:spotify_api_onur/src/ui/pages/album_tracks_screen.dart';
 
-import '../../providers/artist_provider.dart';
+import '../../../providers/artist_provider.dart';
 
 class AlbumListview extends StatefulWidget {
   const AlbumListview({super.key});

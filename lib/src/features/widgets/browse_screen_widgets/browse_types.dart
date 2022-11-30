@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../providers/categories_provider.dart';
+import '../../../providers/categories_provider.dart';
 
 class BrowseTypes extends StatefulWidget {
   const BrowseTypes({super.key});

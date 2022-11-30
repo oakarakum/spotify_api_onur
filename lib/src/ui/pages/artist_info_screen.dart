@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:spotify_api_onur/src/features/widgets/album_listview.dart';
-import 'package:spotify_api_onur/src/features/widgets/songs_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/artist_info_screen_widgets/album_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/artist_info_screen_widgets/songs_listview.dart';
 import 'package:spotify_api_onur/src/providers/fav_artist_provider.dart';
 import 'package:spotify_api_onur/src/ui/pages/artist_all_songs.dart';
 import 'package:spotify_api_onur/src/ui/pages/browse_screen.dart';

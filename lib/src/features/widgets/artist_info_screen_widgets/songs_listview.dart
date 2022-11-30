@@ -7,8 +7,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:spotify_api_onur/src/providers/album_tracks_provider.dart';
 
-import '../../providers/fav_artist_album_provider.dart';
-import '../../providers/fav_artist_provider.dart';
+import '../../../providers/fav_artist_album_provider.dart';
+import '../../../providers/fav_artist_provider.dart';
 
 class SongsListView extends StatefulWidget {
   const SongsListView({super.key});
@@ -91,11 +91,7 @@ class _SongsListViewState extends State<SongsListView> {
                                         ]),
                                   ),
                                 ),
-                                SizedBox(width: 8.w),
-                                SizedBox(
-                                    width: 10.w,
-                                    height: 5.h,
-                                    child: Center(child: Text("5:33"))),
+                                SizedBox(width: 18.w),
                                 Padding(
                                   padding: EdgeInsets.only(left: 6.w),
                                   child: SizedBox(

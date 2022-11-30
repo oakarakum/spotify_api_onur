@@ -70,14 +70,15 @@ class _PublicPlayListState extends State<PublicPlayList> {
                                   width: 41.w,
                                   height: 7.h,
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
                                         FittedBox(
                                           child: Text(
-                                              value.profilePlaylist.items![index]
-                                                  .track!.name
+                                              value.profilePlaylist
+                                                  .items![index].track!.name
                                                   .toString(),
                                               style: TextStyle(
                                                   color: Color(0xff222222),
@@ -89,8 +90,12 @@ class _PublicPlayListState extends State<PublicPlayList> {
                                         ),
                                         FittedBox(
                                           child: Text(
-                                              value.profilePlaylist.items![index]
-                                                  .track!.artists![0].name!
+                                              value
+                                                  .profilePlaylist
+                                                  .items![index]
+                                                  .track!
+                                                  .artists![0]
+                                                  .name!
                                                   .toString(),
                                               style: TextStyle(
                                                   color: Color(0xff222222),
@@ -100,15 +105,7 @@ class _PublicPlayListState extends State<PublicPlayList> {
                                       ]),
                                 ),
                               ),
-                              SizedBox(width: 2.w),
-                              SizedBox(
-                                  width: 15.w,
-                                  height: 5.h,
-                                  child: Center(
-                                      child: Padding(
-                                    padding: EdgeInsets.only(right: 6.w),
-                                    child: Text("5:33"),
-                                  ))),
+                              SizedBox(width: 17.w),
                               SizedBox(
                                 width: 10.w,
                                 height: 5.h,

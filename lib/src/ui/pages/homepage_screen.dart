@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_onur/src/features/widgets/bottomnavbar.dart';
-import 'package:spotify_api_onur/src/features/widgets/fav_artist_listview.dart';
-import 'package:spotify_api_onur/src/features/widgets/favorite_mixes_listview.dart';
-import 'package:spotify_api_onur/src/features/widgets/homepage_appbar.dart';
-import 'package:spotify_api_onur/src/features/widgets/random_playlists.dart';
+import 'package:spotify_api_onur/src/features/widgets/homepage_widgets/fav_artist_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/homepage_widgets/favorite_mixes_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/homepage_widgets/homepage_appbar.dart';
+import 'package:spotify_api_onur/src/features/widgets/homepage_widgets/random_playlists.dart';
 
 import '../../providers/artist_provider.dart';
 import '../../providers/fav_mixes_provider.dart';

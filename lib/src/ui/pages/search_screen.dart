@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:spotify_api_onur/src/features/widgets/search_appbar.dart';
+import 'package:spotify_api_onur/src/features/widgets/search_screen_widgets/search_appbar.dart';
 import 'package:spotify_api_onur/src/providers/search_list_providers.dart';
 
 class SearchList extends StatefulWidget {

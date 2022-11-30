@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:spotify_api_onur/src/features/widgets/albums_songs_listview.dart';
+import 'package:spotify_api_onur/src/features/widgets/artist_info_screen_widgets/albums_songs_listview.dart';
 
 class AlbumTracksScreen extends StatefulWidget {
   String id;

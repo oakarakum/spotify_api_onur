@@ -101,6 +101,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       },
                       icon: SvgPicture.asset("assets/images/explore.svg",
                           color:
+                              //value.PageTransition() bottom navbar aternatif
                               value.index == 1 ? Colors.green : Colors.black)),
                   IconButton(
                       onPressed: () {
